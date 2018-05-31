@@ -39,10 +39,14 @@ def menu_gestion():
         print('1024 = 1Go , 2048 = 2Go , 4096 = 4Go , 8192 = 8Go , 16384 = 16Go, 32768 = 32Go')
         serv_ram = input('> ')
         print('Lancement du serveur en cours ...')
+        if os.path.exists(emplacement_server + "eula.txt"):
+            replace_line(emplacement_server + 'eula.txt', 2, "eula=true"'\n')
         try:
             os.system('cd ' + emplacement_server + ' && java -Xmx' + serv_ram + 'M -Xms' + serv_ram + 'M -jar server.jar nogui')
         except:
             print("Erreur java n'est pas installé veuillez suivre ce tuto : https://tecadmin.net/install-java-8-on-centos-rhel-and-fedora/")
+        if read_line(emplacement_server + 'eula.txt', 2, "eula=false"):
+            print("Relancez le serveur de nouveau pour confimer la eula de minecraft")
     elif(question_user=='5'):
         administration_server()
     elif(question_user=='6'):
@@ -62,14 +66,14 @@ def server_creation():
     if os.path.exists(path):
         os.mkdir(path + server_name)
         os.system('cd ' + path + server_name + ' && wget https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar')
-
+        
     elif not os.path.exists(path):
         os.mkdir(path)
         print('Nommez votre nouveau serveur')
         server_name = input('> ')
         os.mkdir(path + server_name)
         os.system('cd ' + path + server_name + ' && wget https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar')
-
+        
 def delete_server():
     print('Donnez le chemin où se trouve vôtre serveur. | Exemple: /home/vagrant/roots/')
     delete_servers = input('> ')
@@ -242,7 +246,14 @@ def replace_line(file_name, line_num, text):
     out = open(file_name, 'w')
     out.writelines(lines)
     out.close()
-  
+    
+
+ def read_line(file_name, line_num, text):
+    lines = open(file_name, 'r').readline()
+    lines[line_num] = text
+    out = open(file_name, 'r')
+    out.readline(lines)
+    out.close() 
 
 #################################################-	Programme	-#################################################
 
