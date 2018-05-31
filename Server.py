@@ -50,9 +50,9 @@ def menu_gestion():
         exit()
 
 def server_creation():
-    print('Donnez le chemin où vous souhaiter créer vôtre serveur. | Exemple: /home/vagrant/roots/')
+    print('Donnez le chemin où vous souhaitez créer votre serveur. | Exemple: /home/vagrant/roots/')
     path = input('> ')
-    print('\nNommer votre serveur.')
+    print('\nNommez votre serveur.')
     server_name = input('> ')
 
     if os.path.exists(path + server_name):
@@ -65,25 +65,25 @@ def server_creation():
 
     elif not os.path.exists(path):
         os.mkdir(path)
-        print('Nommer votre nouveau serveur')
+        print('Nommez votre nouveau serveur')
         server_name = input('> ')
         os.mkdir(path + server_name)
         os.system('cd ' + path + server_name + ' && wget https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar')
 
 def delete_server():
-    print('Donner le chemin où se trouve vôtre serveur. | Exemple: /home/vagrant/roots/')
+    print('Donnez le chemin où se trouve vôtre serveur. | Exemple: /home/vagrant/roots/')
     delete_servers = input('> ')
     
     if os.path.exists(delete_servers):
-        print('Donner le nom du serveur à supprimer')
+        print('Donnez le nom du serveur à supprimer')
         os.system('ls ' + delete_server)
         delete_nameServer = input('> ')
         
-        print('Lancement de la suppression du serveur en cour ...')
+        print('Lancement de la suppression du serveur en cours ...')
         os.system('rm -rf ' + delete_servers + delete_nameServer)
 
     elif not os.path.exists(delete_server):
-        print('Vous avez renseigner le mauvais chemin, le dossier est inexistant.')
+        print('Vous avez renseigné le mauvais chemin, le dossier est inéxistant.')
         delete_server()
 
 def server_saveBackup():
@@ -91,11 +91,11 @@ def server_saveBackup():
     choice_server = input('> ')
 
     if(choice_server=='1'):
-        print('Où voulez-vous sauvegarder vôtre serveur ? | Exemple: /home/vagrant/backup/')
+        print('Où voulez-vous sauvegarder votre serveur ? | Exemple: /home/vagrant/backup/')
         save_server = input('> ')
         print('Donnez le chemin du serveur que vous voulez sauvegarder | Exemple: /home/vagrant/roots/Creatif/')
         link_server = input('> ')
-        print('Nommer votre backup | une date sera notifié sur le fichier du backup automatiquement')
+        print('Nommez votre backup | une date sera notifiée sur le fichier du backup automatiquement')
         name_backup = input('> ')
 
         print("Dossier backup: " + save_server + " | Dossier du serveur: " + link_server + " | Nom du backup: " + name_backup)
@@ -113,13 +113,13 @@ def server_saveBackup():
             server_saveBackup()
 
     elif(choice_server=='2'):
-        print('Où se situe le fichier de restauration de vôtre serveur ? | Exemple: /home/vagrant/backup/')
+        print('Où se situe le fichier de restauration de votre serveur ? | Exemple: /home/vagrant/backup/')
         backup_server = input('> ')
-        print('Où voulez vous restaurer vôtre serveur ? | Exemple: /home/vagrant/roots/Creatif/')
+        print('Où voulez vous restaurer votre serveur ? | Exemple: /home/vagrant/roots/Creatif/')
         extract_server = input('> ')
         print('Nom du serveur:')
         server_name = input('> ')
-        print('Sélectionner vôtre backup:')
+        print('Sélectionnez votre backup:')
         os.system('ls ' + backup_server)
         restauration_server = input('> ')
 
@@ -144,8 +144,8 @@ def server_saveBackup():
 
 def administration_server():
     os.system('clear')
-    print('Vous entrez dans le système d\'administration de vôtre serveur, pensez à établir une sauvegarde avant toute action auprès du serveur qui pourrais causer d\'éventuelle dommage.\n')
-    print('Donner le chemin du serveur que vous voulez administrer | exemple: /home/vagrant/roots/Creatif/ , ne pas oublier le dernier /')
+    print('Vous entrez dans le système d\'administration de votre serveur, pensez à établir une sauvegarde avant toute action auprès du serveur qui pourrais causer d\'éventuelle dommage.\n')
+    print('Donnez le chemin du serveur que vous voulez administrer | exemple: /home/vagrant/roots/Creatif/ , ne pas oublier le dernier /')
     admin_server = input('> ')
 
     while True:
