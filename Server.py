@@ -155,7 +155,7 @@ def administration_server():
         print('|                                                                                                            |')
         print('|                                Administration Serveur Minecraft                                            |')
         print('|                                                                                                            |')
-        print('|    1) Gestion port                 2) Gestion ip                           3) Nombre de joueur max         |')
+        print('|    1) Gestion port                 2) Gestion ip                           3) Nombre de joueurs max         |')
         print('|                                                                                                            |')
         print('|    4) Difficulté                   5) PvP                                  6) Hardcore                     |')
         print('|                                                                                                            |')
@@ -178,7 +178,7 @@ def administration_server():
             serv_ip = input('> ')
             replace_line(admin_server + 'server.properties', 22, "server-ip=" + serv_ip + '\n')
         elif(admin_question == '3'):
-            print('Vous êtes sur le point de changer le nombre maximum de joueur.')
+            print('Vous êtes sur le point de changer le nombre maximum de joueurs.')
             serv_player = input('> ')
             replace_line(admin_server + 'server.properties', 17, "max-player=" + serv_player + '\n')
         elif(admin_question == '4'):
@@ -198,15 +198,15 @@ def administration_server():
             serv_description = input('> ')
             replace_line(admin_server + 'server.properties', 36, "modt=" + serv_description + '\n')
         elif(admin_question == '8'):
-            print('Vous êtes sur le point de changer le type d\'accès au serveur ce qui signifie que si vous acceptez les version crack. | Payant: True , Crack: False')
+            print('Vous êtes sur le point de changer le type d\'accès au serveur ce qui signifie que si vous acceptez les versions crack. | Payant: True , Crack: False')
             serv_version = input('> ')
             replace_line(admin_server + 'server.properties', 31, "online-mode=" + serv_version + '\n')
         elif(admin_question == '9'):
-            print('Vous êtes sur le point de passer le serveur en accès privée, pensé à ajouter les joueurs dans la whitelist à la suite | Activé: True , Désactiver: False')
+            print('Vous êtes sur le point de passer le serveur en accès privée, pensez à ajouter les joueurs dans la whitelist à la suite | Activé: True , Désactiver: False')
             serv_whitelist = input('> ')
             replace_line(admin_server + 'server.properties', 29, "white-list=" + serv_whitelist + '\n')
         elif(admin_question == '10'):
-            print('Vous êtes sur le point de supprimer un monde pensez à sauvegarder avant de commencer à supprimer vos mondes | 1) OverWorld , 2) Nether , 3) End')
+            print('Vous êtes sur le point de supprimer un monde, pensez à sauvegarder avant de commencer à supprimer vos mondes | 1) OverWorld , 2) Nether , 3) End')
             serv_world = input('> ')
 
             print('Chemin du dossier où se trouve ' + serv_world)
