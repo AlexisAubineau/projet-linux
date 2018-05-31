@@ -39,8 +39,10 @@ def menu_gestion():
         print('1024 = 1G , 2048 = 2G , 4096 = 4G , 8192 = 8G , 16384 = 16Go, 32768 = 32Go')
         serv_ram = input('> ')
         print('Lancement du serveur en cours ...')
-        os.system('cd ' + emplacement_server + ' && java -Xmx' + serv_ram + 'M -Xms' + serv_ram + 'M -jar server.jar nogui')
-        
+        try:
+            os.system('cd ' + emplacement_server + ' && java -Xmx' + serv_ram + 'M -Xms' + serv_ram + 'M -jar server.jar nogui')
+        except:
+            print("Erreur java n'est pas installé veuillez suivre ce tuto : https://tecadmin.net/install-java-8-on-centos-rhel-and-fedora/")
     elif(question_user=='5'):
         administration_server()
     elif(question_user=='6'):
