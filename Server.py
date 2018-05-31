@@ -19,7 +19,7 @@ def menu_gestion():
     print('|                                                                                                            |')
     print('|    1) Créer un serveur             2) Supprimer un serveur                 3) Sauvegarde/Restauration      |')
     print('|                                                                                                            |')
-    print('|    4) Démarrer le serveur           5) Administration                       6) Quitter                      |')
+    print('|    4) Démarrer le serveur           5) Administration                       6) Quitter                     |')
     print('|                                                                                                            |')
     print('#------------------------------------------------------------------------------------------------------------#')
 
@@ -155,7 +155,7 @@ def administration_server():
         print('|                                                                                                            |')
         print('|                                Administration Serveur Minecraft                                            |')
         print('|                                                                                                            |')
-        print('|    1) Gestion port                 2) Gestion ip                           3) Nombre de joueurs max         |')
+        print('|    1) Gestion port                 2) Gestion ip                           3) Nombre de joueurs max        |')
         print('|                                                                                                            |')
         print('|    4) Difficulté                   5) PvP                                  6) Hardcore                     |')
         print('|                                                                                                            |')
