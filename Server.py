@@ -207,17 +207,20 @@ def administration_server():
             print('Vous êtes sur le point de supprimer un monde pensez à sauvegarder avant de commencer à supprimer vos mondes | 1) OverWorld , 2) Nether , 3) End')
             serv_world = input('> ')
 
+            print('Chemin du dossier où se trouve ' + serv_world)
+            del_world = input('> ')
+
             if(serv_world == '1'):
                 print('Vous êtes sur le point de supprimer le monde.')
-                os.system('rm -rf ' + choice_server + 'world')
+                os.system('rm -rf ' + del_world + '/world/overworld')
 
             elif(serv_world == '2'):
                 print('Vous êtes sur le point de supprimer le nether')
-                os.system('rm -rf ' + choice_server + 'nether')
+                os.system('rm -rf ' + del_world + '/world/the_nether')
 
             elif(serv_world == '3'):
                 print('Vous êtes sur le point de supprimer l\'end')
-                os.system('rm -rf ' + choice_server + 'end')
+                os.system('rm -rf ' + del_world + '/world/the_end')
               
         elif(admin_question == '11'):
             print('Vous êtes sur le point de changer le seed de la map, qui vous permettra de générer un monde grâce à ce seed.')
