@@ -33,25 +33,21 @@ def menu_gestion():
         print('Lancement de la sauvegarde / Backup du serveur, veuillez suivre les procédures suivante.\n')
         server_saveBackup()
     elif(question_user=='4'):
-        print('Donner nous l\'emplacement du server | exemple: /home/vagrant/roots/Creatif/')
-        emplacement_server = input('> ')
-        print('Combien de Ram voulez-vous attribuer au serveur ?')
-        print('1024 = 1Go , 2048 = 2Go , 4096 = 4Go , 8192 = 8Go , 16384 = 16Go, 32768 = 32Go')
-        serv_ram = input('> ')
-        print('Lancement du serveur en cours ...')
-        if os.path.exists(emplacement_server + "eula.txt"):
-            replace_line(emplacement_server + 'eula.txt', 2, "eula=true"'\n')
-        try:
-            os.system('cd ' + emplacement_server + ' && java -Xmx' + serv_ram + 'M -Xms' + serv_ram + 'M -jar server.jar nogui')
-        except:
-            print("Erreur java n'est pas installé veuillez suivre ce tuto : https://tecadmin.net/install-java-8-on-centos-rhel-and-fedora/")
-        if read_line(emplacement_server + 'eula.txt', 2, "eula=false"):
-            print("Relancez le serveur de nouveau pour confimer la eula de minecraft")
-    elif(question_user=='5'):
-        administration_server()
-    elif(question_user=='6'):
-        os.system('clear')
-        exit()
+        server_demarage()
+        
+def server_demarage():
+    print('Donner nous l\'emplacement du server | exemple: /home/vagrant/roots/Creatif/')
+    emplacement_server = input('> ')
+    print('Combien de Ram voulez-vous attribuer au serveur ?')
+    print('1024 = 1G , 2048 = 2G , 4096 = 4G , 8192 = 8G , 16384 = 16Go, 32768 = 32Go')
+    serv_ram = input('> ')
+    print('Lancement du serveur en cours ...')
+    if os.path.exists(emplacement_server + "eula.txt"):
+        replace_line(emplacement_server + 'eula.txt', 2, "eula=true"'\n')
+    try:
+        os.system('cd ' + emplacement_server + ' && java -Xmx' + serv_ram + 'M -Xms' + serv_ram + 'M -jar server.jar nogui')
+    except:
+        print("Erreur java n'est pas installé veuillez suivre ce tuto : https://tecadmin.net/install-java-8-on-centos-rhel-and-fedora/")
 
 def server_creation():
     print('Donnez le chemin où vous souhaitez créer votre serveur. | Exemple: /home/vagrant/roots/')
