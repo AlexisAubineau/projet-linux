@@ -19,12 +19,12 @@ def menu_gestion():
     print('|                                                                                                            |')
     print('|    1) Créer un serveur             2) Supprimer un serveur                 3) Sauvegarde/Restauration      |')
     print('|                                                                                                            |')
-    print('|    4) Démarer le serveur           5) Administration                       6) Quitter                      |')
+    print('|    4) Démarrer le serveur           5) Administration                       6) Quitter                      |')
     print('|                                                                                                            |')
     print('#------------------------------------------------------------------------------------------------------------#')
 
     if(question_user=='1'):
-        print('Lancement de la crétion du nouveau serveur, veuillez sur les procédures suivante.\n')
+        print('Lancement de la création du nouveau serveur, veuillez sur les procédures suivante.\n')
         server_creation()
     elif(question_user=='2'):
         print('Lancement de la suppression du serveur, veuillez suivre les procédures mais pensez à faire une sauvegarde si nécessaire.\n')
@@ -36,7 +36,7 @@ def menu_gestion():
         print('Donner nous l\'emplacement du server | exemple: /home/vagrant/roots/Creatif/')
         emplacement_server = input('> ')
         print('Combien de Ram voulez-vous attribuer au serveur ?')
-        print('1024 = 1G , 2048 = 2G , 4096 = 4G , 8192 = 8G , 16384 = 16Go, 32768 = 32Go')
+        print('1024 = 1Go , 2048 = 2Go , 4096 = 4Go , 8192 = 8Go , 16384 = 16Go, 32768 = 32Go')
         serv_ram = input('> ')
         print('Lancement du serveur en cours ...')
         try:
@@ -153,7 +153,7 @@ def administration_server():
 
         print('#------------------------------------------------------------------------------------------------------------#')
         print('|                                                                                                            |')
-        print('|                                    Gestionnaire Serveur Minecraft                                          |')
+        print('|                                Administration Serveur Minecraft                                            |')
         print('|                                                                                                            |')
         print('|    1) Gestion port                 2) Gestion ip                           3) Nombre de joueur max         |')
         print('|                                                                                                            |')
