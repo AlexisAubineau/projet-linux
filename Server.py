@@ -34,6 +34,9 @@ def menu_gestion():
         server_saveBackup()
     elif(question_user=='4'):
         server_demarage()
+    elif(question_user=='5'):
+        administration_server()
+    elif(question_user=='6'):
         
 def server_demarage():
     print('Donner nous l\'emplacement du server | exemple: /home/vagrant/roots/Creatif/')
