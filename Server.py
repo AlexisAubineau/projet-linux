@@ -37,6 +37,7 @@ def menu_gestion():
     elif(question_user=='5'):
         administration_server()
     elif(question_user=='6'):
+        exit()
         
 def server_demarage():
     print('Donner nous l\'emplacement du server | exemple: /home/vagrant/roots/Creatif/')
